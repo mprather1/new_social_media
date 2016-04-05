@@ -1,30 +1,15 @@
 Rails.application.routes.draw do
-  get 'comments/index'
+  
+  resources :users
+  resources :submissions
+  
+    get 'access/login' => 'access#login'
+  get 'access/attempt_login' => 'access#attempt_login'
+  post 'access/attempt_login' => 'access#attempt_login'
+  get 'access/logout' => 'access#logout'
 
-  get 'comments/show'
-
-  get 'comments/new'
-
-  get 'comments/edit'
-
-  get 'access/login'
-
-  get 'comments/index'
-
-  get 'comments/show'
-
-  get 'comments/new'
-
-  get 'comments/edit'
-
-  get 'submissions/index'
-
-  get 'submissions/show'
-
-  get 'submissions/new'
-
-  get 'submissions/edit'
-
+  root 'access#login'
+  
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
