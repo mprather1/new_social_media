@@ -1,4 +1,12 @@
-<%= @submissions.each do |f| %>
-  <%= f.title %><br>
-  <%= f.content %><br>
-<% end %>
+
+<table>
+  <tr>
+    <th>Title</th>
+   </tr>
+  <% @submissions.each do |f| %>
+
+  <tr>
+    <td>  <%= link_to f.title, submission_path(f) %></td>
+   </tr>
+  <% end %>
+</table>
